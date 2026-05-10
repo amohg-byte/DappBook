@@ -1,4 +1,5 @@
 // Shared contract config — update this address after every deployment
+// TODO: remember to change this when deploying to testnet
 const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const contractABI = [
     "function listItem(string _ipfsCID, uint256 _pricePerDay, uint256 _depositAmount) external returns (uint256)",
@@ -57,7 +58,7 @@ async function autoConnect(connectBtn) {
 
     try {
         const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-        if (accounts.length === 0) return false; // Not connected yet
+        if (accounts.length === 0) return false; // Not connected yet, don't show annoying popup
 
         provider = new ethers.providers.Web3Provider(window.ethereum);
         signer = provider.getSigner();
@@ -111,7 +112,7 @@ async function loadAllItems() {
     try {
         const count = await contract.itemCounter();
         const total = count.toNumber();
-        console.log("Total items on chain:", total);
+        // console.log("Total items on chain:", total); // debugging stuff
         
         for (let id = 1; id <= total; id++) {
             const item = await contract.items(id);
