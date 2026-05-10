@@ -102,11 +102,13 @@ contract BookRental is ReentrancyGuard, Ownable {
     }
 
     /// @notice Get the total number of registered arbitrators
+    /// @return The total number of arbitrators currently in the pool
     function getArbitratorCount() external view returns (uint256) {
         return arbitratorPool.length;
     }
 
     /// @notice Get all registered arbitrators
+    /// @return An array containing the addresses of all registered arbitrators
     function getArbitratorPool() external view returns (address[] memory) {
         return arbitratorPool;
     }
@@ -344,6 +346,9 @@ contract BookRental is ReentrancyGuard, Ownable {
         return reputation[_user];
     }
 
+    /// @notice Get all details of a specific rental item
+    /// @param _itemId The ID of the item
+    /// @return The item struct containing all details
     function getItem(uint256 _itemId) external view returns (Item memory) {
         return items[_itemId];
     }
