@@ -1,4 +1,4 @@
-const { ethers } = require("ethers");
+const {ethers} = require("ethers");
 
 async function main() {
   const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545");
