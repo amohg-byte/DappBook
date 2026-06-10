@@ -12,6 +12,8 @@ async function main() {
     const balBefore = await renter.getBalance();
     console.log("Renter balance BEFORE rent:", ethers.utils.formatEther(balBefore), "ETH");
 
+
+    
     // Rent (pays 0 + 1 = 1 ETH)
     await contract.connect(renter).rentItem(1, true, { value: ethers.utils.parseEther("1") });
     const balAfterRent = await renter.getBalance();
