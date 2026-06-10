@@ -14,7 +14,7 @@ async function main() {
 
 
     
-    // Rent (pays 0 + 1 = 1 ETH)
+    // Rent (pays 0+1=1 ETH)
     await contract.connect(renter).rentItem(1, true, { value: ethers.utils.parseEther("1") });
     const balAfterRent = await renter.getBalance();
     console.log("Renter balance AFTER rent: ", ethers.utils.formatEther(balAfterRent), "ETH");
