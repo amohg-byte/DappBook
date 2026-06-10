@@ -13,7 +13,7 @@ async function main() {
 
   
   
-  // Auto-update frontend/config.js with the new address
+  // Auto-update frontend / config.js with the new address
   const configPath = path.join(__dirname, "..", "frontend", "config.js");
   if (fs.existsSync(configPath)) {
     let config = fs.readFileSync(configPath, "utf8");
