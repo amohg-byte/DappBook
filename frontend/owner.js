@@ -1,6 +1,7 @@
 const connectBtn = document.getElementById('connectBtn');
 const dashboard = document.getElementById('dashboard');
 
+
 // Auto-connect on page load if wallet was already connected
 window.addEventListener('load', async () => {
     const ok = await autoConnect(connectBtn);
