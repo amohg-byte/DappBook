@@ -11,6 +11,7 @@ async function main() {
   console.log(`BookRental deployed to ${bookRental.address}`);
   console.log(`Deployer (${deployer.address}) auto-registered as fallback arbitrator`);
 
+  
   // Auto-update frontend/config.js with the new address
   const configPath = path.join(__dirname, "..", "frontend", "config.js");
   if (fs.existsSync(configPath)) {
